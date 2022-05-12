@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background-color: rgb(255, 212, 127);
+    h1 {
+        margin: 0;
+        text-decoration: underline;
+    }
+    .break-session-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .break {
+            padding: 10px;
+            #break-label {
+                margin: 0;
+                padding: 10px;
+            }
+            .break-control {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                font-size: 30px;
+                #break-length {
+                    padding: 10px;
+                }       
+            }
+        }
+        .session {
+            @extend .break;
+            #session-label {
+                @extend #break-label;
+            }
+            .session-control {
+                @extend .break-control;
+                #session-length {
+                    @extend #break-length;
+                }
+            }
+        }
+    }
+    .timer-container {
+        border: 1px solid black;
+        border-radius: 30px;
+        padding: 10px;
+    }
+    #timer-label {
+        margin: 0;
+        padding: 5px;
+        padding-top: 0;
+    }
+    #time-left {
+        font-size: 60px;
+    }
+    .master-control {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 10px;
+    }
+    #start_stop {
+        margin-right: 5px;
+    }
+    #reset {
+        margin-left: 5px;
+    }
+}
+
+.control-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    font-size: 20px;
+}
